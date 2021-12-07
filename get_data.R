@@ -16,6 +16,12 @@ get_data <- function(){
     
     # drop the useless rows
     d <- d[c(-1:-2),]
+    
+    # drop the useless columns, which are without values
+    d_col <- d %>% colnames()
+    d <- d[,-which(d_col=="")]
+    
+    # combine the data
     df_tmy3 <- rbind(df_tmy3,d)
     
     
@@ -27,4 +33,4 @@ get_data <- function(){
   return(df_tmy3)
 }
 # demo
-# df1 <- get_data()
+df1 <- get_data()
