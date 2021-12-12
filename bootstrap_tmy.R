@@ -23,6 +23,7 @@ bootstrap_tmy <- function(df){
   }
   # write.csv(df3,"tmy")
   return(df3)
+  colnames(df3)<- colnames(df1)
 }
 
 repeat_bootstrap <- function(n = 1, df){
@@ -52,10 +53,10 @@ repeat_bootstrap <- function(n = 1, df){
     assign(names, x)
     
     # write the TMY data into csv files
-    write.csv(x,paste0("tmy","_",j,".csv"))
+    write.csv(x,paste0("tmy","_",j,".csv"),row.names = FALSE)
   }
 }
 
 # demo --- if the user want to run the bootstrap, they can uncomment the annotation below
 # df1 <- get_data()
-# repeat_bootstrap(n = 5,df1)
+ repeat_bootstrap(n = 5,df1)
