@@ -59,4 +59,4 @@ repeat_bootstrap <- function(n = 1, df){
 
 # demo --- if the user want to run the bootstrap, they can uncomment the annotation below
 # df1 <- get_data()
- repeat_bootstrap(n = 5,df1)
+repeat_bootstrap(n = 5,df1)
